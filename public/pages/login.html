@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ReUse Phone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../imgs/logo.png">
+</head>
+
+<body class="pagina-login">
+    <header class="cabecalho-site">
+        <div class="conteudo-centralizado conteudo-cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imgs/logo.png" alt="ReUse Phone">
+            </a>
+
+            <nav class="navegacao-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="introducao-pagina">
+            <div class="conteudo-centralizado">
+                <h1>Login</h1>
+                <p>Acesse uma simulação da área do cliente para demonstrar envio de dados ao backend.</p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="conteudo-centralizado conteudo-estreito">
+                <form id="form-login" class="cartao-formulario" action="#" method="post">
+                    <h2>Acesse sua conta</h2>
+                    <p>Digite seus dados para simular o acesso à área do cliente.</p>
+
+                    <section class="aviso-simulacao aviso-login">
+                        <p>Este login é apenas uma simulação acadêmica. Nenhuma conta real é acessada e nenhum dado é salvo.</p>
+                    </section>
+
+                    <div class="campo-formulario">
+                        <label for="email-login">E-mail</label>
+                        <input type="email" id="email-login" name="email" placeholder="Digite seu e-mail">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="senha-login">Senha</label>
+                        <input type="password" id="senha-login" name="senha" placeholder="Digite sua senha">
+                    </div>
+
+                    <button id="btn-login" class="botao botao-principal botao-formulario" type="submit">Entrar</button>
+
+                    <p id="resposta-login" class="mensagem-status" aria-live="polite"></p>
+                </form>
+
+                <section class="cartao-informacao orientacao-login">
+                    <h2>Como testar</h2>
+                    <p>Digite qualquer e-mail e uma senha com pelo menos 4 caracteres para simular o acesso.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="conteudo-centralizado conteudo-rodape">
+            <strong>ReUse Phone</strong>
+            <span>2026</span>
+        </div>
+    </footer>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

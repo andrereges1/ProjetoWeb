@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | ReUse Phone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../imgs/logo.png">
+</head>
+
+<body>
+    <header class="cabecalho-site">
+        <div class="conteudo-centralizado conteudo-cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imgs/logo.png" alt="ReUse Phone">
+            </a>
+
+            <nav class="navegacao-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="introducao-pagina">
+            <div class="conteudo-centralizado">
+                <h1>Produtos disponíveis</h1>
+                <p>Celulares usados revisados, com informações básicas para ajudar na escolha do aparelho ideal.</p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="conteudo-centralizado">
+                <div class="caixa-vitrine">
+                    <div class="cabecalho-secao">
+                        <h2>Vitrine de produtos</h2>
+                        <p>Confira os aparelhos disponíveis e escolha o modelo que combina melhor com sua rotina.</p>
+                    </div>
+
+                    <section class="aviso-simulacao">
+                        <p>Este site é um projeto acadêmico. As ações de compra e carrinho são apenas simulações visuais.</p>
+                    </section>
+
+                    <p id="mensagem-produtos" class="mensagem-status" aria-live="polite">Carregando produtos...</p>
+
+                    <div id="lista-produtos" class="linha-produtos grade-produtos">
+                        <!-- Cards manuais preservados temporariamente para consulta durante a transição para JavaScript.
+                        <article class="cartao-produto">
+                            <div class="imagem-produto">
+                                <img src="../imgs/iphone 11.png" alt="iPhone 11 usado">
+                            </div>
+                            <div class="conteudo-produto">
+                                <h3>iPhone 11</h3>
+                                <ul class="especificacoes-produto">
+                                    <li>Marca: Apple</li>
+                                    <li>Estado: Bom</li>
+                                    <li>Armazenamento: 128GB</li>
+                                    <li>Cor: Preto</li>
+                                </ul>
+                                <p>Boa bateria, câmeras versáteis e ótimo custo-benefício.</p>
+                                <strong class="preco">R$ 1.899,00</strong>
+                            </div>
+                            <div class="acoes-cartao">
+                                <a class="botao botao-contorno" href="detalhes.html?id=1">Ver detalhes</a>
+                                <a class="botao botao-principal" href="carrinho.html">Adicionar ao carrinho</a>
+                            </div>
+                        </article>
+
+                        <article class="cartao-produto produto-indisponivel">
+                            <div class="imagem-produto">
+                                <img src="../imgs/XR.png" alt="iPhone XR usado">
+                            </div>
+                            <div class="conteudo-produto">
+                                <h3>iPhone XR</h3>
+                                <span class="status-indisponivel">Indisponível</span>
+                                <ul class="especificacoes-produto">
+                                    <li>Marca: Apple</li>
+                                    <li>Estado: Regular</li>
+                                    <li>Armazenamento: 64GB</li>
+                                    <li>Cor: Vermelho</li>
+                                </ul>
+                                <p>Modelo simples para uso diário, com sinais visíveis de uso.</p>
+                                <strong class="preco">R$ 1.399,00</strong>
+                            </div>
+                            <div class="acoes-cartao">
+                                <a class="botao botao-contorno" href="detalhes.html?id=2">Ver detalhes</a>
+                                <span class="botao botao-desabilitado">Indisponível</span>
+                            </div>
+                        </article>
+
+                        <article class="cartao-produto">
+                            <div class="imagem-produto">
+                                <img src="../imgs/s20.png" alt="Samsung Galaxy S20 usado">
+                            </div>
+                            <div class="conteudo-produto">
+                                <h3>Samsung Galaxy S20</h3>
+                                <ul class="especificacoes-produto">
+                                    <li>Marca: Samsung</li>
+                                    <li>Estado: Excelente</li>
+                                    <li>Armazenamento: 128GB</li>
+                                    <li>Cor: Cinza</li>
+                                </ul>
+                                <p>Tela de boa qualidade, desempenho estável e produto revisado.</p>
+                                <strong class="preco">R$ 1.799,00</strong>
+                            </div>
+                            <div class="acoes-cartao">
+                                <a class="botao botao-contorno" href="detalhes.html?id=3">Ver detalhes</a>
+                                <a class="botao botao-principal" href="carrinho.html">Adicionar ao carrinho</a>
+                            </div>
+                        </article>
+
+                        <article class="cartao-produto">
+                            <div class="imagem-produto">
+                                <img src="../imgs/A52.png" alt="Samsung Galaxy A52 usado">
+                            </div>
+                            <div class="conteudo-produto">
+                                <h3>Samsung Galaxy A52</h3>
+                                <ul class="especificacoes-produto">
+                                    <li>Marca: Samsung</li>
+                                    <li>Estado: Bom</li>
+                                    <li>Armazenamento: 128GB</li>
+                                    <li>Cor: Azul</li>
+                                </ul>
+                                <p>Aparelho equilibrado para redes sociais, fotos e estudos.</p>
+                                <strong class="preco">R$ 1.199,00</strong>
+                            </div>
+                            <div class="acoes-cartao">
+                                <a class="botao botao-contorno" href="detalhes.html?id=4">Ver detalhes</a>
+                                <a class="botao botao-principal" href="carrinho.html">Adicionar ao carrinho</a>
+                            </div>
+                        </article>
+
+                        <article class="cartao-produto">
+                            <div class="imagem-produto">
+                                <img src="../imgs/edge.png" alt="Motorola Edge 30 usado">
+                            </div>
+                            <div class="conteudo-produto">
+                                <h3>Motorola Edge 30</h3>
+                                <ul class="especificacoes-produto">
+                                    <li>Marca: Motorola</li>
+                                    <li>Estado: Excelente</li>
+                                    <li>Armazenamento: 256GB</li>
+                                    <li>Cor: Preto</li>
+                                </ul>
+                                <p>Mais espaço de armazenamento e bom desempenho para uso diário.</p>
+                                <strong class="preco">R$ 1.599,00</strong>
+                            </div>
+                            <div class="acoes-cartao">
+                                <a class="botao botao-contorno" href="detalhes.html?id=5">Ver detalhes</a>
+                                <a class="botao botao-principal" href="carrinho.html">Adicionar ao carrinho</a>
+                            </div>
+                        </article>
+
+                        <article class="cartao-produto">
+                            <div class="imagem-produto">
+                                <img src="../imgs/Redmi Note 11.png" alt="Xiaomi Redmi Note 11 usado">
+                            </div>
+                            <div class="conteudo-produto">
+                                <h3>Xiaomi Redmi Note 11</h3>
+                                <ul class="especificacoes-produto">
+                                    <li>Marca: Xiaomi</li>
+                                    <li>Estado: Bom</li>
+                                    <li>Armazenamento: 128GB</li>
+                                    <li>Cor: Grafite</li>
+                                </ul>
+                                <p>Boa bateria e opção econômica para tarefas comuns.</p>
+                                <strong class="preco">R$ 999,00</strong>
+                            </div>
+                            <div class="acoes-cartao">
+                                <a class="botao botao-contorno" href="detalhes.html?id=6">Ver detalhes</a>
+                                <a class="botao botao-principal" href="carrinho.html">Adicionar ao carrinho</a>
+                            </div>
+                        </article>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="conteudo-centralizado">
+                <div class="cabecalho-secao">
+                    <h2>Critérios de avaliação</h2>
+                    <p>Classificação simples para indicar o estado de conservação de cada aparelho.</p>
+                </div>
+
+                <div class="lista-beneficios">
+                    <article class="cartao-informacao">
+                        <span class="icone-circular">✓</span>
+                        <h3>Excelente</h3>
+                        <p>Poucos sinais de uso.</p>
+                    </article>
+
+                    <article class="cartao-informacao">
+                        <span class="icone-circular icone-azul">B</span>
+                        <h3>Bom</h3>
+                        <p>Sinais leves de uso.</p>
+                    </article>
+
+                    <article class="cartao-informacao">
+                        <span class="icone-circular icone-vermelho">R</span>
+                        <h3>Regular</h3>
+                        <p>Marcas visíveis, mas funcionamento normal.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="conteudo-centralizado conteudo-rodape">
+            <strong>ReUse Phone</strong>
+            <span>2026</span>
+        </div>
+    </footer>
+    <script src="../js/produtos.js"></script>
+</body>
+
+</html>

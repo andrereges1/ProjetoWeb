@@ -1,0 +1,20 @@
+{
+  "name": "reuse-phone",
+  "version": "1.0.0",
+  "description": "Projeto ReUse Phone com integração entre frontend e backend usando Node.js e JavaScript vanilla.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "node",
+    "backend",
+    "frontend"
+  ],
+  "author": "",
+  "license": "ISC"
+}

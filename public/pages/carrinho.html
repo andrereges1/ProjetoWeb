@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | ReUse Phone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../imgs/logo.png">
+</head>
+
+<body>
+    <header class="cabecalho-site">
+        <div class="conteudo-centralizado conteudo-cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imgs/logo.png" alt="ReUse Phone">
+            </a>
+
+            <nav class="navegacao-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="introducao-pagina">
+            <div class="conteudo-centralizado">
+                <h1>Carrinho de compras</h1>
+                <p>Confira os itens adicionados ao carrinho simulado.</p>
+            </div>
+        </section>
+
+        <section class="secao secao-carrinho">
+            <div class="conteudo-centralizado">
+                <p id="mensagem-carrinho" class="mensagem-status" aria-live="polite">Carregando carrinho...</p>
+
+                <div class="layout-carrinho">
+                    <section id="itens-carrinho" class="itens-carrinho"></section>
+
+                    <aside id="resumo-carrinho" class="cartao-resumo resumo-carrinho"></aside>
+                </div>
+
+                <section id="aviso-carrinho" class="aviso-simulacao aviso-carrinho" aria-live="polite"></section>
+            </div>
+        </section>
+
+        <section class="secao secao-clara">
+            <div class="conteudo-centralizado">
+                <div class="cabecalho-secao">
+                    <h2>Próximos passos</h2>
+                    <p>Depois de conferir o carrinho, a loja ajuda a combinar pagamento, retirada ou entrega.</p>
+                </div>
+
+                <ol class="lista-passos">
+                    <li><span>1</span>Conferir os produtos.</li>
+                    <li><span>2</span>Entrar em contato com a loja.</li>
+                    <li><span>3</span>Combinar retirada ou entrega.</li>
+                    <li><span>4</span>Finalizar atendimento.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="conteudo-centralizado conteudo-rodape">
+            <strong>ReUse Phone</strong>
+            <span>2026</span>
+        </div>
+    </footer>
+    <script src="../js/carrinho.js"></script>
+</body>
+
+</html>

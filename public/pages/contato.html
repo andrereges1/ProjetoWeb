@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | ReUse Phone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../imgs/logo.png">
+</head>
+
+<body>
+    <header class="cabecalho-site">
+        <div class="conteudo-centralizado conteudo-cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imgs/logo.png" alt="ReUse Phone">
+            </a>
+
+            <nav class="navegacao-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="introducao-pagina">
+            <div class="conteudo-centralizado">
+                <h1>Contato</h1>
+                <p>Entre em contato com a ReUse Phone para tirar dúvidas sobre aparelhos, estado de conservação, retirada e formas de pagamento.</p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="conteudo-centralizado layout-contato">
+                <form id="form-contato" class="cartao-formulario" action="#" method="post">
+                    <h2>Fale com a ReUse Phone</h2>
+                    <p>Envie uma mensagem para tirar dúvidas sobre os aparelhos disponíveis.</p>
+
+                    <section class="aviso-simulacao aviso-contato">
+                        <p>Este formulário faz parte de um projeto acadêmico. O envio da mensagem é apenas uma simulação e não envia e-mail real.</p>
+                    </section>
+
+                    <div class="linha-formulario">
+                        <div class="campo-formulario">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+                        </div>
+                    </div>
+
+                    <div class="linha-formulario">
+                        <div class="campo-formulario">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" name="assunto" placeholder="Ex.: Interesse em um produto">
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="produto">Produto de interesse</label>
+                            <select id="produto" name="produto">
+                                <option value="">Selecione um produto</option>
+                                <option value="iPhone 11">iPhone 11</option>
+                                <option value="iPhone XR">iPhone XR</option>
+                                <option value="Samsung Galaxy S20">Samsung Galaxy S20</option>
+                                <option value="Samsung Galaxy A52">Samsung Galaxy A52</option>
+                                <option value="Motorola Edge 30">Motorola Edge 30</option>
+                                <option value="Xiaomi Redmi Note 11">Xiaomi Redmi Note 11</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem"></textarea>
+                    </div>
+
+                    <button id="btn-enviar-contato" class="botao botao-principal botao-formulario" type="submit">Enviar mensagem</button>
+
+                    <p id="resposta-contato" class="mensagem-status" aria-live="polite"></p>
+                </form>
+
+                <aside class="painel-informacoes">
+                    <h2>Informações da loja</h2>
+                    <p>Informações para atendimento e dúvidas sobre os aparelhos.</p>
+
+                    <dl class="lista-detalhes">
+                        <div>
+                            <dt>Cidade</dt>
+                            <dd>Garanhuns - PE</dd>
+                        </div>
+                        <div>
+                            <dt>Horário</dt>
+                            <dd>Segunda a sexta, das 08h às 18h</dd>
+                        </div>
+                        <div>
+                            <dt>E-mail</dt>
+                            <dd>contato@reusephone.com</dd>
+                        </div>
+                        <div>
+                            <dt>Telefone</dt>
+                            <dd>(87) 99999-0000</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="conteudo-centralizado conteudo-rodape">
+            <strong>ReUse Phone</strong>
+            <span>2026</span>
+        </div>
+    </footer>
+    <script src="../js/contato.js"></script>
+</body>
+
+</html>

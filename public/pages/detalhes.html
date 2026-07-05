@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto | ReUse Phone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../imgs/logo.png">
+</head>
+
+<body class="pagina-detalhe">
+    <header class="cabecalho-site">
+        <div class="conteudo-centralizado conteudo-cabecalho">
+            <a class="marca" href="../index.html">
+                <img src="../imgs/logo.png" alt="ReUse Phone">
+            </a>
+
+            <nav class="navegacao-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="introducao-pagina">
+            <div class="conteudo-centralizado conteudo-detalhe">
+                <h1>Detalhes do produto</h1>
+                <p>Informações completas do aparelho carregadas diretamente do backend da ReUse Phone.</p>
+            </div>
+        </section>
+
+        <section class="secao secao-detalhes">
+            <div class="conteudo-centralizado conteudo-detalhe">
+                <p id="mensagem-detalhes" class="mensagem-status" aria-live="polite">Carregando detalhes do produto...</p>
+
+                <div id="detalhes-produto"></div>
+
+                <section id="comparacao-produtos" class="secao-comparacao"></section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape-site">
+        <div class="conteudo-centralizado conteudo-rodape">
+            <strong>ReUse Phone</strong>
+            <span>2026</span>
+        </div>
+    </footer>
+    <script src="../js/detalhes.js"></script>
+</body>
+
+</html>
