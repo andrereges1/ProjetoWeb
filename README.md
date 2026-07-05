@@ -24,12 +24,12 @@ O front-end irá buscar essas informações usando JavaScript, por meio de `fetc
 
 O projeto pode ser desenvolvido com as seguintes tecnologias:
 
-- HTML
-- CSS
-- JavaScript puro
-- Node.js
-- Express
-- JSON
+* HTML
+* CSS
+* JavaScript puro
+* Node.js
+* Express
+* JSON
 
 A proposta é manter o projeto simples, sem banco de dados e sem frameworks avançados no front-end, para não fugir muito do conteúdo trabalhado durante as aulas.
 
@@ -127,11 +127,11 @@ const produtos = await resposta.json();
 
 Com os dados recebidos, o JavaScript poderá criar os elementos da página usando o DOM, por exemplo:
 
-- `document.createElement`
-- `document.getElementById`
-- `appendChild`
-- `textContent`
-- `setAttribute`
+* `document.createElement`
+* `document.getElementById`
+* `appendChild`
+* `textContent`
+* `setAttribute`
 
 Assim, os produtos exibidos na tela passam a vir da API local, e não mais diretamente do HTML.
 
@@ -167,16 +167,16 @@ Com isso, a mesma página poderá exibir informações diferentes dependendo do 
 
 A página de detalhes poderá mostrar dados como:
 
-- nome do aparelho;
-- imagem;
-- preço;
-- estado de conservação;
-- cor;
-- armazenamento;
-- saúde da bateria;
-- acessórios inclusos;
-- pontos positivos;
-- observações.
+* nome do aparelho;
+* imagem;
+* preço;
+* estado de conservação;
+* cor;
+* armazenamento;
+* saúde da bateria;
+* acessórios inclusos;
+* pontos positivos;
+* observações.
 
 Essa abordagem deixa o projeto mais organizado, evita a criação de várias páginas repetidas e torna o sistema mais próximo de uma loja virtual real.
 
@@ -224,11 +224,11 @@ O carrinho não precisa ter pagamento real nem banco de dados. Ele será apenas 
 
 A página de contato poderá ter um formulário com os seguintes campos:
 
-- nome;
-- e-mail;
-- assunto;
-- produto de interesse;
-- mensagem.
+* nome;
+* e-mail;
+* assunto;
+* produto de interesse;
+* mensagem.
 
 Quando o usuário clicar em enviar, o JavaScript enviará os dados para a API usando o método POST:
 
@@ -270,18 +270,18 @@ Por exemplo, o usuário informa e-mail e senha, e o servidor retorna uma respost
 
 Com essa evolução, o projeto passa a demonstrar conhecimentos importantes de desenvolvimento web, como:
 
-- criação de servidor com Node.js;
-- organização de arquivos estáticos;
-- criação de rotas;
-- uso de API REST;
-- retorno de dados em JSON;
-- consumo de API com `fetch`;
-- uso de `async/await`;
-- manipulação do DOM;
-- renderização dinâmica de produtos;
-- envio de dados com POST;
-- validação simples de formulário;
-- integração entre front-end e back-end.
+* criação de servidor com Node.js;
+* organização de arquivos estáticos;
+* criação de rotas;
+* uso de API REST;
+* retorno de dados em JSON;
+* consumo de API com `fetch`;
+* uso de `async/await`;
+* manipulação do DOM;
+* renderização dinâmica de produtos;
+* envio de dados com POST;
+* validação simples de formulário;
+* integração entre front-end e back-end.
 
 ---
 
