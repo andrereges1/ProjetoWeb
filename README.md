@@ -1,322 +1,296 @@
-# ReUse Phone
+# Proposta de evolução do projeto ReUse Phone
 
-Projeto acadêmico da disciplina Programação para Internet 1.
+## Visão geral
 
-## Tema
+A proposta para esta etapa do projeto é transformar a **ReUse Phone** em uma loja virtual mais dinâmica, utilizando um back-end simples em **Node.js**.
 
-Loja de venda de celulares usados.
+Na primeira versão, o site funciona principalmente como uma página estática, onde os produtos, informações, detalhes e páginas estão escritos diretamente no HTML. Nesta nova etapa, a ideia é manter a mesma aparência visual do projeto, mas fazer com que parte dos dados passe a ser fornecida por um servidor local.
 
-## Objetivo
+Dessa forma, o projeto deixa de ser apenas um site estático e passa a simular melhor o funcionamento de uma aplicação web real, com comunicação entre front-end e back-end.
 
-Integrar o projeto frontend desenvolvido com HTML e CSS a um backend em Node.js.
+---
 
-## Tecnologias usadas
+## Objetivo principal
+
+O objetivo principal é criar uma **API local** para a ReUse Phone.
+
+Essa API será responsável por fornecer os dados dos celulares usados, informações da loja, produtos em destaque, dados do carrinho e respostas simuladas para formulários.
+
+O front-end irá buscar essas informações usando JavaScript, por meio de `fetch` e `async/await`, aplicando conceitos trabalhados em sala nas atividades de API e manipulação do DOM.
+
+---
+
+## Tecnologias utilizadas
+
+O projeto pode ser desenvolvido com as seguintes tecnologias:
 
 - HTML
 - CSS
-- JavaScript vanilla
+- JavaScript puro
 - Node.js
+- Express
+- JSON
 
-## Estrutura de pastas
+A proposta é manter o projeto simples, sem banco de dados e sem frameworks avançados no front-end, para não fugir muito do conteúdo trabalhado durante as aulas.
 
-```text
-reuse-phone/
+---
+
+## Estrutura sugerida do projeto
+
+A estrutura do projeto pode ser organizada da seguinte forma:
+
+```txt
+reuse-phone-backend/
 ├── app.js
 ├── package.json
-├── README.md
-├── HISTORICO.md
-├── docs/
-│   ├── ROTAS.md
-│   └── APRESENTACAO.md
 ├── data/
-│   ├── produtos.js
-│   ├── loja.js
-│   ├── carrinho.js
-│   └── README.md
+│   └── produtos.js
 └── public/
     ├── index.html
+    ├── pages/
+    │   ├── produtos.html
+    │   ├── detalhes.html
+    │   ├── carrinho.html
+    │   └── contato.html
     ├── css/
     │   └── style.css
-    ├── imgs/
     ├── js/
-    │   ├── index.js
     │   ├── produtos.js
     │   ├── detalhes.js
     │   ├── carrinho.js
-    │   ├── contato.js
-    │   └── login.js
-    └── pages/
-        ├── produtos.html
-        ├── detalhes.html
-        ├── carrinho.html
-        ├── contato.html
-        └── login.html
+    │   └── contato.js
+    └── imgs/
 ```
 
-## Como executar
+Nessa estrutura, o arquivo `app.js` será responsável por iniciar o servidor Node.js.
 
-1. Abrir o terminal na pasta do projeto.
-2. Executar:
+A pasta `data` armazenará os dados simulados dos produtos, como se fosse um pequeno banco de dados local.
 
-```bash
-npm start
-```
+A pasta `public` ficará responsável pelos arquivos do front-end, como HTML, CSS, JavaScript e imagens.
 
-3. Acessar no navegador:
+---
 
-```text
+## Servidor local com Node.js
+
+O projeto será executado por meio de um servidor local criado com Node.js.
+
+Ao iniciar o servidor, o site poderá ser acessado pelo navegador no endereço:
+
+```txt
 http://localhost:3000
 ```
 
-## Rotas disponíveis nesta etapa
+Essa etapa é importante porque o projeto deixa de ser aberto apenas como arquivo HTML no navegador e passa a ser servido por um back-end.
 
-GET /
+Isso aproxima o funcionamento do projeto de uma aplicação web real, onde o servidor entrega os arquivos do front-end e também disponibiliza dados por meio de rotas.
 
-Retorna a página inicial do site.
+---
 
-GET /api/status
+## API de produtos
 
-Retorna um JSON informando se o backend está funcionando.
+O back-end terá uma API simples responsável por retornar dados em formato JSON.
 
-## Rotas da API
+As rotas podem ser organizadas da seguinte forma:
 
-| Método | Rota | Descrição |
-|---|---|---|
-| GET | /api/status | Retorna o status do backend |
-| GET | /api/produtos | Retorna todos os produtos cadastrados |
-| GET | /api/produtos/:id | Retorna um produto específico pelo ID |
-| GET | /api/destaques | Retorna os produtos marcados como destaque |
-| GET | /api/loja | Retorna informações simuladas da loja |
-| GET | /api/carrinho | Retorna o carrinho atual |
-| POST | /api/carrinho/adicionar | Adiciona um produto ao carrinho em memória |
-| DELETE | /api/carrinho/remover/:id | Remove um produto do carrinho em memória |
-| POST | /api/contato | Recebe mensagem simulada de contato |
-| POST | /api/login | Recebe dados de login e retorna uma resposta simulada |
+| Método | Rota                | Descrição                                      |
+| ------ | ------------------- | ---------------------------------------------- |
+| GET    | `/api/produtos`     | Retorna todos os celulares cadastrados         |
+| GET    | `/api/produtos/:id` | Retorna os dados de um celular específico      |
+| GET    | `/api/destaques`    | Retorna os produtos em destaque                |
+| GET    | `/api/carrinho`     | Retorna um carrinho simulado                   |
+| GET    | `/api/loja`         | Retorna informações da loja                    |
+| POST   | `/api/contato`      | Simula o envio de uma mensagem pelo formulário |
+| POST   | `/api/login`        | Simula um login simples, sem autenticação real |
 
-### GET /api/status
+Essas rotas seguem a ideia de uma API REST, onde cada endereço representa um recurso do sistema.
 
-Retorna o status do backend.
+Por exemplo, a rota `/api/produtos` representa a lista de produtos da loja, enquanto `/api/produtos/:id` representa um produto específico.
 
-### GET /api/produtos
+---
 
-Retorna todos os produtos cadastrados.
+## Renderização dinâmica dos produtos
 
-### GET /api/produtos/:id
+Na página de produtos, a ideia é evitar deixar todos os cards escritos manualmente no HTML.
 
-Retorna um produto específico de acordo com o ID informado.
+Em vez disso, a página terá apenas uma área vazia onde os produtos serão inseridos dinamicamente:
+
+```html
+<section id="lista-produtos"></section>
+```
+
+Depois disso, o JavaScript irá buscar os dados no back-end:
+
+```js
+const resposta = await fetch("/api/produtos");
+const produtos = await resposta.json();
+```
+
+Com os dados recebidos, o JavaScript poderá criar os elementos da página usando o DOM, por exemplo:
+
+- `document.createElement`
+- `document.getElementById`
+- `appendChild`
+- `textContent`
+- `setAttribute`
+
+Assim, os produtos exibidos na tela passam a vir da API local, e não mais diretamente do HTML.
+
+Essa parte é uma das mais importantes do projeto, pois mostra a integração entre front-end e back-end.
+
+---
+
+## Página de detalhes dinâmica
+
+Na versão estática, cada produto poderia ter sua própria página de detalhes, como:
+
+```txt
+iphone-11.html
+galaxy-s20.html
+motorola-edge-30.html
+```
+
+Na nova versão, a ideia é usar apenas uma página de detalhes dinâmica:
+
+```txt
+detalhes.html?id=1
+```
+
+O JavaScript irá pegar o ID do produto pela URL e buscar as informações no back-end.
 
 Exemplo:
 
-```text
-/api/produtos/1
+```txt
+GET /api/produtos/1
 ```
 
-### GET /api/destaques
+Com isso, a mesma página poderá exibir informações diferentes dependendo do produto selecionado.
 
-Retorna apenas os produtos marcados como destaque.
+A página de detalhes poderá mostrar dados como:
 
-### GET /api/loja
+- nome do aparelho;
+- imagem;
+- preço;
+- estado de conservação;
+- cor;
+- armazenamento;
+- saúde da bateria;
+- acessórios inclusos;
+- pontos positivos;
+- observações.
 
-Retorna informações simuladas da loja.
+Essa abordagem deixa o projeto mais organizado, evita a criação de várias páginas repetidas e torna o sistema mais próximo de uma loja virtual real.
 
-### GET /api/carrinho
+---
 
-Retorna os itens de um carrinho simulado, contendo produtos, quantidades, subtotal, frete, total e aviso de simulação.
+## Carrinho simulado
 
-### POST /api/carrinho/adicionar
+O projeto também pode ter uma página de carrinho com dados vindos do back-end.
 
-Recebe o ID de um produto e adiciona o item ao carrinho mantido em memória no servidor.
+A página `carrinho.html` poderá buscar os dados na rota:
 
-Exemplo de corpo enviado:
-
-```json
-{
-  "produtoId": 1
-}
-```
-
-### DELETE /api/carrinho/remover/:id
-
-Remove um produto do carrinho em memória.
-
-Exemplo:
-
-```text
-/api/carrinho/remover/1
-```
-
-### POST /api/contato
-
-Recebe dados do formulário de contato e retorna uma confirmação simulada.
-
-Campos esperados:
-
-- nome;
-- email;
-- assunto;
-- produto;
-- mensagem.
-
-Exemplo de resposta:
-
-```json
-{
-  "sucesso": true,
-  "mensagem": "Mensagem recebida com sucesso. Em breve a ReUse Phone entrará em contato.",
-  "protocolo": "RP-12345",
-  "simulacao": true
-}
-```
-
-### POST /api/login
-
-Recebe e-mail e senha e retorna uma resposta simulada de login.
-
-Campos esperados:
-
-- email;
-- senha.
-
-Exemplo de resposta:
-
-```json
-{
-  "sucesso": true,
-  "mensagem": "Login simulado realizado com sucesso. Nenhuma sessão real foi criada.",
-  "usuario": {
-    "nome": "cliente",
-    "email": "cliente@email.com",
-    "tipo": "Cliente simulado"
-  },
-  "simulacao": true
-}
-```
-
-## Página inicial dinâmica
-
-A página public/index.html utiliza o arquivo public/js/index.js para buscar informações do backend.
-
-Foram usadas as rotas:
-
-```text
-GET /api/loja
-GET /api/destaques
-```
-
-A rota GET /api/loja fornece nome, slogan, descrição e aviso da loja.
-
-A rota GET /api/destaques fornece os produtos marcados como destaque.
-
-O JavaScript usa fetch e async/await para obter os dados e depois renderiza os elementos na página usando manipulação do DOM.
-
-## Integração da página de produtos
-
-A página public/pages/produtos.html utiliza o arquivo public/js/produtos.js para buscar os dados da rota GET /api/produtos.
-
-O JavaScript usa fetch e async/await para acessar o backend. Depois, os produtos recebidos em JSON são transformados em cards HTML usando manipulação do DOM, com document.createElement, textContent e appendChild.
-
-## Integração da página de detalhes
-
-A página public/pages/detalhes.html recebe o ID do produto pela URL, por exemplo:
-
-```text
-/pages/detalhes.html?id=1
-```
-
-O arquivo public/js/detalhes.js usa URLSearchParams para obter esse ID e faz uma requisição usando fetch para a rota:
-
-```text
-GET /api/produtos/:id
-```
-
-Depois, os dados recebidos em JSON são renderizados no HTML usando JavaScript vanilla e manipulação do DOM.
-
-Também foi criada uma tabela comparativa simples usando dados da rota:
-
-```text
-GET /api/produtos
-```
-
-## Integração da página de carrinho
-
-A página public/pages/carrinho.html usa o arquivo public/js/carrinho.js para buscar os dados da rota:
-
-```text
+```txt
 GET /api/carrinho
 ```
 
-O backend monta um carrinho simulado com base no estado em memória do servidor e nos dados completos existentes em data/produtos.js.
+O back-end pode retornar um carrinho simulado contendo produtos, subtotal, frete e total.
 
-O frontend recebe os dados em JSON e renderiza os itens, o resumo do pedido e o aviso de simulação usando JavaScript vanilla e manipulação do DOM.
+Exemplo de resposta:
 
-## Carrinho com backend
-
-O carrinho é controlado pelo backend usando dados em memória.
-
-O frontend pode adicionar produtos usando:
-
-```text
-POST /api/carrinho/adicionar
+```json
+{
+  "itens": [
+    {
+      "id": 1,
+      "nome": "iPhone 11",
+      "preco": 1800
+    },
+    {
+      "id": 2,
+      "nome": "Galaxy A52",
+      "preco": 1200
+    }
+  ],
+  "subtotal": 3000,
+  "frete": 30,
+  "total": 3030
+}
 ```
 
-E remover produtos usando:
+O carrinho não precisa ter pagamento real nem banco de dados. Ele será apenas uma simulação visual, mas já demonstrará a comunicação entre o front-end e o back-end.
 
-```text
-DELETE /api/carrinho/remover/:id
-```
+---
 
-O carrinho continua sendo uma simulação acadêmica. Os dados não são salvos em banco de dados e podem ser perdidos ao reiniciar o servidor.
+## Formulário de contato
 
-## Integração do formulário de contato
+A página de contato poderá ter um formulário com os seguintes campos:
 
-A página public/pages/contato.html utiliza o arquivo public/js/contato.js para capturar o envio do formulário.
+- nome;
+- e-mail;
+- assunto;
+- produto de interesse;
+- mensagem.
 
-O JavaScript impede o recarregamento da página, valida os campos e envia os dados para o backend usando fetch com método POST.
+Quando o usuário clicar em enviar, o JavaScript enviará os dados para a API usando o método POST:
 
-A rota usada é:
-
-```text
+```txt
 POST /api/contato
 ```
 
-O backend recebe os dados, valida campos obrigatórios e retorna uma resposta JSON simulando o recebimento da mensagem.
+O back-end poderá verificar se os campos foram preenchidos corretamente e retornar uma mensagem de confirmação.
+
+Exemplo de resposta:
+
+```json
+{
+  "mensagem": "Mensagem recebida com sucesso. Em breve entraremos em contato."
+}
+```
+
+Essa parte aproveita os conteúdos de formulário, validação e manipulação de elementos com JavaScript.
+
+---
 
 ## Login simulado
 
-A página public/pages/login.html utiliza o arquivo public/js/login.js para capturar o envio do formulário de login.
+Também pode ser criada uma rota simples para simular login:
 
-O JavaScript impede o recarregamento da página, valida e-mail e senha e envia os dados para o backend usando fetch com método POST.
-
-A rota usada é:
-
-```text
+```txt
 POST /api/login
 ```
 
-O backend recebe os dados, valida campos obrigatórios e retorna uma resposta JSON simulando um login bem-sucedido.
+Essa funcionalidade não precisa ter autenticação real, banco de dados ou criptografia de senha.
 
-Nenhuma sessão real é criada e nenhum dado é salvo.
+O objetivo é apenas demonstrar o envio de dados do front-end para o back-end.
 
-## Páginas do frontend
+Por exemplo, o usuário informa e-mail e senha, e o servidor retorna uma resposta simulada dizendo se o login foi aceito ou não.
 
-- public/index.html: página inicial dinâmica com dados da loja e produtos em destaque.
-- public/pages/produtos.html: vitrine de produtos carregada do backend.
-- public/pages/detalhes.html: página dinâmica de detalhes por ID.
-- public/pages/carrinho.html: carrinho visual com dados simulados do backend.
-- public/pages/contato.html: formulário de contato com POST simulado.
-- public/pages/login.html: formulário de login com POST simulado.
+---
 
-## Arquivos JavaScript do frontend
+## O que o projeto demonstra
 
-- public/js/index.js: carrega informações da loja e produtos em destaque para renderizar a página inicial.
-- public/js/produtos.js: carrega os produtos do backend e renderiza os cards na página de produtos.
-- public/js/detalhes.js: carrega um produto pelo ID da URL e renderiza a página dinâmica de detalhes.
-- public/js/carrinho.js: carrega o carrinho simulado do backend e renderiza os itens, resumo e aviso.
-- public/js/contato.js: captura o formulário de contato e envia os dados ao backend com POST.
-- public/js/login.js: captura o formulário de login e envia os dados ao backend com POST simulado.
+Com essa evolução, o projeto passa a demonstrar conhecimentos importantes de desenvolvimento web, como:
 
-## Observação
+- criação de servidor com Node.js;
+- organização de arquivos estáticos;
+- criação de rotas;
+- uso de API REST;
+- retorno de dados em JSON;
+- consumo de API com `fetch`;
+- uso de `async/await`;
+- manipulação do DOM;
+- renderização dinâmica de produtos;
+- envio de dados com POST;
+- validação simples de formulário;
+- integração entre front-end e back-end.
 
-Nesta etapa, o backend ainda está servindo o frontend estático e disponibilizando rotas simuladas em JSON, incluindo envio de contato sem e-mail real, login simulado e carrinho em memória.
+---
 
-Os dados ainda são simulados e ficam armazenados em arquivos dentro da pasta data ou em memória enquanto o servidor está rodando. Não foi utilizado banco de dados nesta etapa.
+## Conclusão
+
+A ideia principal é transformar a ReUse Phone em uma aplicação web simples, mas mais completa.
+
+O visual do site pode continuar parecido com a primeira versão, porém os dados principais passam a vir do back-end.
+
+Com isso, o projeto deixa de ser apenas estático e passa a funcionar como uma loja virtual dinâmica, usando uma API própria em Node.js.
+
+Essa proposta é adequada para a segunda etapa porque aplica os conteúdos estudados em sala, como API, rotas, JSON, `fetch`, `async/await`, DOM e formulários, sem tornar o projeto complexo demais.
